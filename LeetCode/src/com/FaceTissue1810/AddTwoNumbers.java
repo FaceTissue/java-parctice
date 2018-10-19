@@ -1,5 +1,8 @@
 package com.FaceTissue1810;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * You are given two non-empty linked lists representing two non-negative integers.
  * The digits are stored in reverse order and each of their nodes contain a single digit.
@@ -19,13 +22,26 @@ public class AddTwoNumbers {
 }
 
 class ListNode {
-    private int val;
+    int val;
     ListNode next;
     ListNode(int x) { val = x; }
 }
 
 class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        boolean tag = false;
+        List<ListNode> nodeList = new ArrayList<>();
+        while (l1 != null || l2 != null) {
+            int sum = tag ? l1.val + l2.val + 1 : l1.val + l2.val;
+            tag = l1.val + l2.val >= 10;
+            ListNode listNode = new ListNode(Math.abs(sum - 10));
+
+            int size = nodeList.size();
+            if (size > 0) {
+                nodeList.get(size - 1).next = listNode;
+            }
+            nodeList.add(listNode);
+        }
         return new ListNode(10);
     }
 }
