@@ -17,7 +17,15 @@ import java.util.List;
  */
 public class AddTwoNumbers {
     public static void main(String[] args) {
-        System.out.println("hello world");
+        ListNode l1 = new ListNode(5);
+        ListNode l2 = new ListNode(5);
+
+        Solution solution = new Solution();
+        ListNode listNode = solution.addTwoNumbers(l1, l2);
+        while (listNode != null) {
+            System.out.println(listNode.val);
+            listNode = listNode.next;
+        }
     }
 }
 
@@ -29,19 +37,45 @@ class ListNode {
 
 class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        boolean tag = false;
+        ListNode a = l1, b = l2;
+        boolean addTag = false;
         List<ListNode> nodeList = new ArrayList<>();
-        while (l1 != null || l2 != null) {
-            int sum = tag ? l1.val + l2.val + 1 : l1.val + l2.val;
-            tag = l1.val + l2.val >= 10;
-            ListNode listNode = new ListNode(Math.abs(sum - 10));
-
+        while (a != null || b != null) {
             int size = nodeList.size();
-            if (size > 0) {
-                nodeList.get(size - 1).next = listNode;
+            int sum;
+            if (a == null || b == null) {
+                if (!addTag) {
+                    ListNode breakNode = a == null ? b : a;
+                    if (size > 0) {
+                        nodeList.get(size - 1).next = breakNode;
+                    } else {
+                        nodeList.add(breakNode);
+                    }
+                    return nodeList.get(0);
+                }
+                else {
+                    ListNode listNode = a == null ? b : a;
+                    sum = listNode.val + 1;
+                    a = a == null ? null : a.next;
+                    b = b == null ? null : b.next;
+                }
             }
-            nodeList.add(listNode);
+            else {
+                sum = addTag ? a.val + b.val + 1 : a.val + b.val;
+                a = a.next;
+                b = b.next;
+            }
+            addTag = sum >= 10;
+            ListNode node = new ListNode(sum % 10);
+            if (size > 0) {
+                nodeList.get(size - 1).next = node;
+            }
+            nodeList.add(node);
+            if (a == null && b == null && addTag) {
+                ListNode listNode = new ListNode(1);
+                nodeList.get(size).next = listNode;
+            }
         }
-        return new ListNode(10);
+        return nodeList.get(0);
     }
 }
