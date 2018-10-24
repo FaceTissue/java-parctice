@@ -35,8 +35,11 @@ class ListNode {
     ListNode(int x) { val = x; }
 }
 
+/**
+ * my solution
+ */
 class Solution {
-    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+    ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode a = l1, b = l2;
         boolean addTag = false;
         List<ListNode> nodeList = new ArrayList<>();
@@ -72,10 +75,35 @@ class Solution {
             }
             nodeList.add(node);
             if (a == null && b == null && addTag) {
-                ListNode listNode = new ListNode(1);
-                nodeList.get(size).next = listNode;
+                ListNode tailNode = new ListNode(1);
+                nodeList.get(size).next = tailNode;
             }
         }
         return nodeList.get(0);
+    }
+}
+
+/**
+ * the best solution
+ */
+class BestSolution {
+    ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        ListNode dummyHead = new ListNode(0);
+        ListNode p = l1, q = l2, curr = dummyHead;
+        int carry = 0;
+        while (p != null || q != null) {
+            int x = (p != null) ? p.val : 0;
+            int y = (q != null) ? q.val : 0;
+            int sum = carry + x + y;
+            carry = sum / 10;
+            curr.next = new ListNode(sum % 10);
+            curr = curr.next;
+            if (p != null) p = p.next;
+            if (q != null) q = q.next;
+        }
+        if (carry > 0) {
+            curr.next = new ListNode(carry);
+        }
+        return dummyHead.next;
     }
 }
