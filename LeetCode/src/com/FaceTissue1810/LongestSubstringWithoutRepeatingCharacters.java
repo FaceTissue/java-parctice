@@ -1,6 +1,8 @@
 package com.FaceTissue1810;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -34,8 +36,7 @@ public class LongestSubstringWithoutRepeatingCharacters {
     /**
      * my solution
      */
-    class Solution {
-        Solution() {}
+    private class Solution {
         private int lengthOfLongestSubstring(String s) {
             int result = 1;
             Set<Character> set = new HashSet<>();
@@ -48,6 +49,39 @@ public class LongestSubstringWithoutRepeatingCharacters {
                 result = set.size() > result ? set.size() : result;
             }
             return s.length() > 0 ? result : 0;
+        }
+
+        /**
+         * sliding window
+         */
+        private int slidingWindow(String s) {
+            int n = s.length();
+            Set<Character> set = new HashSet<>();
+            int i = 0, j = 0, ans = 0;
+            while (i < n && j < n) {
+                if (!set.contains(s.charAt(j))) {
+                    set.add(s.charAt(j++));
+                    ans = Math.max(j - i, ans);
+                }
+                else {
+                    set.remove(s.charAt(i++));
+                }
+            }
+            return ans;
+        }
+
+        /**
+         * sliding window optimized
+         */
+        private int slidingWindowOptimized(String s) {
+            Map<Character, Integer> map = new HashMap<>();
+            int n = s.length(), ans = 0;
+            for (int i = 0, j = 0; j < n; j++) {
+                if (map.containsKey(s.charAt(j))) i = Math.max(map.get(s.charAt(j)), i);
+                ans = Math.max(j - i + 1, ans);
+                map.put(s.charAt(j), j + 1);
+            }
+            return ans;
         }
     }
 }
