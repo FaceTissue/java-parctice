@@ -64,7 +64,7 @@ public class LongestPalindromicSubstring {
                     if (reverse.contains(substring) && substring.length() > ans.length()) {
                         String ar = "";
                         for (int k = substring.length() - 1; k >= 0; k--) ar += substring.charAt(k);
-                        if (s.indexOf(substring) == reverse.indexOf(ar)) {
+                        if (s.indexOf(substring) == s.indexOf(ar)) {
                             ans = substring;
                             break;
                         }
@@ -149,6 +149,6 @@ public class LongestPalindromicSubstring {
     public static void main(String[] args) {
         LongestPalindromicSubstring outer = new LongestPalindromicSubstring();
         Solution solution = outer.new Solution();
-        System.out.println(solution.manacherAlgorithm("noon"));
+        System.out.println(solution.longestCommonSubstring("noon"));
     }
 }
