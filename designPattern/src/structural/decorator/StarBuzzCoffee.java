@@ -9,7 +9,7 @@ import structural.decorator.concreteDecorator.Whip;
 
 public class StarBuzzCoffee {
     public static void main(String[] args) {
-        Beverage beverage = new Espresso();
+        Beverage beverage = new Espresso(10);
         System.out.println(beverage.getDescription() + " $" + beverage.cost());
 
         Beverage beverage1 = new HouseBlend();
