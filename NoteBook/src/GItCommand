@@ -1,0 +1,13 @@
+Command Semantic Specification(命令语义规范):
+<...>   --------->   需要输入的参数
+
+git建立本地分支和远程分支的映射关系:
+git branch --set-upstream-to=origin/<remote branch> <local branch>
+
+git从指定分支拉取代码：
+git pull <remote> <branch>
+
+git重命名分支：
+git branch -m <old branch name> <new branch name>
+git push orging :<old branch name>
+git push origin <new branch name>

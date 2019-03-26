@@ -1,0 +1,5 @@
+java查看编译生成的字节码：
+javap -v <file name>.class
+
+jvm监控工具：
+jconsole.exe
