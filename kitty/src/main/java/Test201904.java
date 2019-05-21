@@ -1,5 +1,7 @@
+import bean.ListNode;
 import org.junit.Test;
 
+import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -104,5 +106,10 @@ public class Test201904 {
         System.out.println(myAtoi2("        1000 100    "));
         System.out.println(Integer.toBinaryString(-4));
         System.out.println(Integer.toBinaryString(-2147483648));
+    }
+
+    @Test
+    public void tst() {
+        System.out.println("hello".indexOf(""));
     }
 }

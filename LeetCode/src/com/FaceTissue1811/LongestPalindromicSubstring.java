@@ -142,7 +142,7 @@ public class LongestPalindromicSubstring {
                     ansCenter = i;
                 }
             }
-            return s.substring((ansCenter - ansLen) / 2, ansLen - 1);
+            return s.substring((ansCenter - ansLen) / 2,(ansCenter - ansLen) / 2 + ansLen - 1);
         }
     }
 

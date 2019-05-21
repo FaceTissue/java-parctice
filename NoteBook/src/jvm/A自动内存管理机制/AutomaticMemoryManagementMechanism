@@ -1,0 +1,30 @@
+第二章 java内存区域与内存溢出异常
+  运行时数据区域：
+    jvm：程序计数器、java虚拟机栈、本地方法栈、java堆、方法区（运行时常量池）
+    系统：直接内存
+  hotspot虚拟机对象探秘
+    对象的创建
+    内存布局
+    访问定位（句柄和直接指针，hotspot采用直接指针）
+  OutOfMemoryError（OOM）
+    除了程序计数器，其他内存区域都会发生OOM
+    java堆溢出：测试代码：HeapOOM
+               命令行参数：-verbose:gc -Xms20M -Xmx20M -Xmn10M -XX:+PrintGCDetails -XX:SurvivorRatio=8
+               解决方法：首先确认是内存泄漏还是内存溢出，然后采用对应的解决方法
+    虚拟机栈和本地方法栈溢出：测试代码：JavaVMStackSOF JavaVMStackOOM
+                           命令行参数：-Xss128k
+                                     （由于hotspot虚拟机不区分虚拟机栈和本地方法栈，因此设置本地方法栈参数-Xoss存在但无效）
+                           解决方法：单线程环境下栈帧太大，虚拟机栈容量太小，虚拟机抛出的是StackOverflowError
+                                    多线程环境下由于不断新建线程抛出的内存溢出异常，通过减少最大堆和减少栈容量来换取更多线程
+    方法区和运行时常量池溢出：测试代码：RuntimeConstantPoolOOM
+                           命令行参数：-XX:MetaspaceSize=9M -XX:MaxMetaspaceSize=9M
+                                      (JDK 1.7之后开始逐步去永久代，因此1.7之前-XX:PermSize -XX:MaxPermSize有效
+                                       JDK 1.8之后移除对PermSize设置的支持，采用-XX:MetaspaceSize -XX:MaxMetaspaceSize)
+    本机直接内存溢出：测试代码：DirectMemoryOOM
+                    命令行参数：-Xmx20M -XX:MaxDirectMemorySize=10M
+                    解决方法：由DirectMemory导致的内存溢出，一个明显的特征是Heap Dump文件中没有明显的异常。
+                             如果OOM后Dump文件很小，程序由直接或间接使用了NIO，可以考虑本机直接内存溢出的原因
+第三章 垃圾收集器与内存分配策略
+  对象已死吗
+    引用计数法
+    可达性分析法
