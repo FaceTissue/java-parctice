@@ -1,5 +1,8 @@
 package algorithm.dp;
 
+/**
+ * 38.报数
+ */
 public class CountAndSay {
     public String countAndSay(int n) {
         String[] dp = new String[n + 1];

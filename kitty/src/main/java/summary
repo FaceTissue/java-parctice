@@ -1,11 +1,21 @@
-problem               thinking                        class
-41.缺失的第一个正数    哈希、脏工作环境、数组、数学       FirstMissingPositive
-42.接雨水             动态规划、双指针、栈              Trap
-43.字符串相乘         数学（乘法原理）                  Multiply
-44.通配符匹配         动态规划、双指针                  IsMatch
-45.跳跃游戏Ⅱ         贪心算法                         Jump
-46.全排列             回溯算法                         Permute
-47.全排列Ⅱ           回溯算法                         PermuteUnique
-48.旋转图像           递归                             Rotate
-49.字母异位词分组      哈希                            GroupAnagrams
-50.Pow(x, n)          数学（幂乘原理）                 MyPow
+problem                                         thinking                        class
+31.下一个排列                                    数学                            NextPermutation
+32.最长有效括号                                  动态规划、栈                     LongestValidParentheses
+33.搜索旋转排序数组                              二分查找                         Search
+34.在排序数组中查找元素的第一个和最后一个位置       二分查找                         SearchRange
+35.搜索插入位置                                  二分查找                         SearchInsert
+36.有效的数独                                    哈希                            IsValidSudoku
+37.解数独                                       回溯算法                         SolveSudoku
+38.报数                                         数学、递推                       CountAndSay
+39.组合总和                                     回溯算法                         CombinationSum
+40.组合总和Ⅱ                                   回溯算法                         CombinationSum2
+41.缺失的第一个正数                              哈希、脏工作环境、数组、数学       FirstMissingPositive
+42.接雨水                                       动态规划、双指针、栈              Trap
+43.字符串相乘                                   数学（乘法原理）                  Multiply
+44.通配符匹配                                   动态规划、双指针                  IsMatch
+45.跳跃游戏Ⅱ                                   贪心算法                         Jump
+46.全排列                                       回溯算法                         Permute
+47.全排列Ⅱ                                     回溯算法                         PermuteUnique
+48.旋转图像                                     递归                             Rotate
+49.字母异位词分组                                哈希                            GroupAnagrams
+50.Pow(x, n)                                   数学（幂乘原理）                  MyPow

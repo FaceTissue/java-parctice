@@ -1,5 +1,7 @@
 package methodThinking.binarySearch;
 
+import org.junit.Test;
+
 /**
  * 35. 搜索插入位置
  */
@@ -23,8 +25,12 @@ public class SearchInsert {
             int mid = (l + r) / 2;
             if (nums[mid] == target) return mid;
             else if (nums[mid] < target) l = mid + 1;
-            else r = mid + 1;
+            else r = mid - 1;
         }
         return l;
+    }
+    @Test
+    public void test() {
+        System.out.println(searchInsert1(new int[]{7, 8, 9}, 7));
     }
 }
