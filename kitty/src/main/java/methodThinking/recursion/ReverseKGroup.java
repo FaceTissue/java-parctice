@@ -5,6 +5,9 @@ import bean.ListNode;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
+/**
+ * 25.K个一组翻转列表
+ */
 public class ReverseKGroup {
     // 递归实现
     public ListNode reverseKGroup(ListNode head, int k) {

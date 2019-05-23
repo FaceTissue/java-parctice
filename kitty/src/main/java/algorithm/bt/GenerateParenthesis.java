@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 22.闭合数
+ * 22.括号生成
  */
 public class GenerateParenthesis {
     /**

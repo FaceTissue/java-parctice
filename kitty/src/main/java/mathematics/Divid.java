@@ -1,5 +1,8 @@
 package mathematics;
 
+/**
+ * 29.两数相除
+ */
 public class Divid {
     public int divide(int dividend, int divisor) {
         if (divisor == 0) throw new IllegalArgumentException();

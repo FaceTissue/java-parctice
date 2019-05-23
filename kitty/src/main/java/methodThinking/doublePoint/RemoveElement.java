@@ -1,5 +1,8 @@
 package methodThinking.doublePoint;
 
+/**
+ * 27.移除指定元素
+ */
 public class RemoveElement {
     // 双指针
     public int removeElement(int[] nums, int val) {

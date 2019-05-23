@@ -1,4 +1,14 @@
 problem                                         thinking                        class
+21.合并两个有序链表                               链表、递归                      MergeTwoLists
+22.括号生成                                      回溯算法、闭合数                 GenerateParenthesis
+23.合并K个排序链表                                递归、分治算法、优先级队列        MergeKLists
+24.两两交换链表中的节点                            递归                           SwapPairs
+25.K个一组翻转列表                                递归、栈、尾插法                 ReverseKGroup
+26.删除排序数组中的重复项                         双指针                           RemoveDuplicates
+27.移除元素                                      双指针                          RemoveElement
+28.实现strStr                                    KMP算法                         StrStr
+29.两数相除                                      数学（除法原理）                 Divid
+30.串联所有单词的子串                             滑动窗口                        FindSubstring
 31.下一个排列                                    数学                            NextPermutation
 32.最长有效括号                                  动态规划、栈                     LongestValidParentheses
 33.搜索旋转排序数组                              二分查找                         Search
@@ -19,3 +29,7 @@ problem                                         thinking                        
 48.旋转图像                                     递归                             Rotate
 49.字母异位词分组                                哈希                            GroupAnagrams
 50.Pow(x, n)                                   数学（幂乘原理）                  MyPow
+
+-------------------------------------------------------------------------------------------------------------
+*22.闭合数
+*25.尾插法
