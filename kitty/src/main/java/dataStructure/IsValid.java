@@ -4,6 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
 
+/**
+ * 20.有效的括号
+ */
 public class IsValid {
     public boolean isValid(String s) {
         Map<Character, Character> map = new HashMap<>();

@@ -69,4 +69,26 @@ public class ThreeSum {
         }
         return result;
     }
+
+    // 回溯算法(会超时)
+    public List<List<Integer>> threeSum2(int[] nums) {
+        List<List<Integer>> res = new ArrayList<>();
+        if (nums == null || nums.length == 0) return res;
+        Arrays.sort(nums);
+        bt(res, nums, 0, new ArrayList<>(), 0);
+        return res;
+    }
+    public void bt(List<List<Integer>> res, int[] nums, int pos, ArrayList<Integer> tmp, int target) {
+        if (tmp.size() == 3) {
+            if (target == 0) res.add(new ArrayList<>(tmp));
+            return;
+        }
+        for (int i = pos; i < nums.length; i++) {
+            if (i == pos || nums[i] != nums[i - 1]) {
+                tmp.add(nums[i]);
+                bt(res, nums, i + 1, tmp, target - nums[i]);
+                tmp.remove(tmp.size() - 1);
+            }
+        }
+    }
 }

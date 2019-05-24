@@ -1,4 +1,14 @@
 problem                                         thinking                        class
+11.盛水最多的容器                                 双指针                         MaxArea
+12.整数转罗马数字                                 哈希                           IntToRoman
+13.罗马数字转整数                                 哈希                           RomanToInt
+14.最长公共前缀                                   字典树Trie                     LongestCommonPrefix
+15.三数之和                                      双指针、回溯算法                ThreeSum
+16.最接近的三数之和                               双指针                         ThreeSumClosest
+17.电话号码的字母组合                             哈希、回溯算法                  LetterCombinations
+18.四数之和                                      双指针、递归                    FourSum
+19.删除链表的倒数第N个节点                         双指针                         RemoveNthFromEnd
+20.有效的括号                                    哈希、栈                        IsValid
 21.合并两个有序链表                               链表、递归                      MergeTwoLists
 22.括号生成                                      回溯算法、闭合数                 GenerateParenthesis
 23.合并K个排序链表                                递归、分治算法、优先级队列        MergeKLists
@@ -31,5 +41,6 @@ problem                                         thinking                        
 50.Pow(x, n)                                   数学（幂乘原理）                  MyPow
 
 -------------------------------------------------------------------------------------------------------------
+*15.三数之和回溯算法优化
 *22.闭合数
 *25.尾插法

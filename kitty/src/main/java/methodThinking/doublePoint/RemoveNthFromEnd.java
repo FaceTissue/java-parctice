@@ -2,6 +2,9 @@ package methodThinking.doublePoint;
 
 import bean.ListNode;
 
+/**
+ * 19.删除链表的倒数第N个节点
+ */
 public class RemoveNthFromEnd {
     public ListNode removeNthFromEnd(ListNode head, int n) {
         ListNode dummy = new ListNode(0);
