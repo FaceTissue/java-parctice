@@ -1,4 +1,14 @@
 problem                                         thinking                        class
+1.两数之和                                       哈希                           TwoSum
+2.两数相加                                       链表、数学                      AddTwoNumbers
+3.无重复字符的最长子串                             滑动窗口                       LengthOfLongestSubstring
+4.寻找两个有序数组的中位数                         数学（中位数原理）、二分查找     FindMedianSortedArrays
+5.最长回文子串                                    Manacher算法                   LongestPalindrome
+6.Z字形变换                                       按行访问                       ZConvert
+7.整数反转                                       数学                           Reverse
+8.字符串转换整数                                  数学                           MyAtoi
+9.回文数                                         数学                           IsPalindrome
+10.正则表达式匹配                                 动态规划                       IsMatch
 11.盛水最多的容器                                 双指针                         MaxArea
 12.整数转罗马数字                                 哈希                           IntToRoman
 13.罗马数字转整数                                 哈希                           RomanToInt
