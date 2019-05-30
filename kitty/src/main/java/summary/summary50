@@ -1,0 +1,56 @@
+problem                                         thinking                        class
+1.两数之和                                       哈希                           TwoSum
+2.两数相加                                       链表、数学                      AddTwoNumbers
+3.无重复字符的最长子串                             滑动窗口                       LengthOfLongestSubstring
+4.寻找两个有序数组的中位数                         数学（中位数原理）、二分查找     FindMedianSortedArrays
+5.最长回文子串                                    Manacher算法                   LongestPalindrome
+6.Z字形变换                                       按行访问                       ZConvert
+7.整数反转                                       数学                           Reverse
+8.字符串转换整数                                  数学                           MyAtoi
+9.回文数                                         数学                           IsPalindrome
+10.正则表达式匹配                                 动态规划                       IsMatch
+11.盛水最多的容器                                 双指针                         MaxArea
+12.整数转罗马数字                                 哈希                           IntToRoman
+13.罗马数字转整数                                 哈希                           RomanToInt
+14.最长公共前缀                                   字典树Trie                     LongestCommonPrefix
+15.三数之和                                      双指针、回溯算法                ThreeSum
+16.最接近的三数之和                               双指针                         ThreeSumClosest
+17.电话号码的字母组合                             哈希、回溯算法                  LetterCombinations
+18.四数之和                                      双指针、递归                    FourSum
+19.删除链表的倒数第N个节点                         双指针                         RemoveNthFromEnd
+20.有效的括号                                    哈希、栈                        IsValid
+21.合并两个有序链表                               链表、递归                      MergeTwoLists
+22.括号生成                                      回溯算法、闭合数                 GenerateParenthesis
+23.合并K个排序链表                                递归、分治算法、优先级队列        MergeKLists
+24.两两交换链表中的节点                            递归                           SwapPairs
+25.K个一组翻转列表                                递归、栈、尾插法                 ReverseKGroup
+26.删除排序数组中的重复项                         双指针                           RemoveDuplicates
+27.移除元素                                      双指针                          RemoveElement
+28.实现strStr                                    KMP算法                         StrStr
+29.两数相除                                      数学（除法原理）                 Divid
+30.串联所有单词的子串                             滑动窗口                        FindSubstring
+31.下一个排列                                    数学                            NextPermutation
+32.最长有效括号                                  动态规划、栈                     LongestValidParentheses
+33.搜索旋转排序数组                              二分查找                         Search
+34.在排序数组中查找元素的第一个和最后一个位置       二分查找                         SearchRange
+35.搜索插入位置                                  二分查找                         SearchInsert
+36.有效的数独                                    哈希                            IsValidSudoku
+37.解数独                                       回溯算法                         SolveSudoku
+38.报数                                         数学、递推                       CountAndSay
+39.组合总和                                     回溯算法                         CombinationSum
+40.组合总和Ⅱ                                   回溯算法                         CombinationSum2
+41.缺失的第一个正数                              哈希、脏工作环境、数组、数学       FirstMissingPositive
+42.接雨水                                       动态规划、双指针、栈              Trap
+43.字符串相乘                                   数学（乘法原理）                  Multiply
+44.通配符匹配                                   动态规划、双指针                  IsMatch
+45.跳跃游戏Ⅱ                                   贪心算法                         Jump
+46.全排列                                       回溯算法                         Permute
+47.全排列Ⅱ                                     回溯算法                         PermuteUnique
+48.旋转图像                                     递归                             Rotate
+49.字母异位词分组                                哈希                            GroupAnagrams
+50.Pow(x, n)                                   数学（幂乘原理）                  MyPow
+
+-------------------------------------------------------------------------------------------------------------
+*15.三数之和回溯算法优化
+*22.闭合数
+*25.尾插法
