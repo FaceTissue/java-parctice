@@ -1,4 +1,4 @@
-package algorithm.bt;
+package algorithm.backtrack;
 
 import java.util.ArrayList;
 import java.util.Collections;

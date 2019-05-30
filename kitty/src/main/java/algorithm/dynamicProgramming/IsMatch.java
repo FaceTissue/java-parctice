@@ -1,4 +1,4 @@
-package algorithm.dp;
+package algorithm.dynamicProgramming;
 
 /**
  * 44.通配符匹配

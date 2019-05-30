@@ -1,4 +1,4 @@
-package algorithm.ga;
+package algorithm.greedy;
 
 /**
  * 45.跳跃游戏Ⅱ

@@ -1,4 +1,4 @@
-package algorithm.dp;
+package algorithm.dynamicProgramming;
 
 import java.util.ArrayDeque;
 import java.util.Deque;

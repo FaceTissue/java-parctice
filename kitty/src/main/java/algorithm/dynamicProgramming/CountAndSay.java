@@ -1,4 +1,4 @@
-package algorithm.dp;
+package algorithm.dynamicProgramming;
 
 /**
  * 38.报数

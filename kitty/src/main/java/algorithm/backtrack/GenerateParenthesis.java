@@ -1,4 +1,4 @@
-package algorithm.bt;
+package algorithm.backtrack;
 
 import org.junit.Test;
 
