@@ -32,5 +32,6 @@ public class UniquePaths {
     @Test
     public void uniquePathsTest() {
         System.out.println(uniquePaths(7, 3));
+        System.out.println(uniquePaths1(7, 3));
     }
 }
