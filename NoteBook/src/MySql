@@ -1,0 +1,5 @@
+查看查询计划:EXPLAIN + SELECT语句
+EXPLAIN
+SELECT s.* FROM Student s WHERE s.id IN (SELECT s_id FROM SC sc WHERE sc.c_id = 0 AND sc.score = 100);
+
+查看优化后的语句:EXPLAIN EXTENDED + SELECT语句;SHOW WARNINGS;

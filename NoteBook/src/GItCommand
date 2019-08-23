@@ -11,3 +11,13 @@ git重命名分支：
 git branch -m <old branch name> <new branch name>
 git push orging :<old branch name>
 git push origin <new branch name>
+
+git配置全局忽略：
+touch .gitignore_global
+vim .gitignore_global
+git config --global core.excludesfile ~/.gitignore_global
+~指的是当前登陆用户目录
+
+git设置忽略跟踪
+git rm -rf --cached "文件或文件名“
+（或者一步到位：git rm -rf --cached . 然后: git add .)
