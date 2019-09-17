@@ -15,7 +15,7 @@ package com.guide.java.javabase;
 public class StaticTest {
     public static void main(String[] args) {
         staticFunction();
-//        StaticTest staticTest = new StaticTest();
+        StaticTest staticTest = new StaticTest();
     }
     static StaticTest st = new StaticTest();
     static {

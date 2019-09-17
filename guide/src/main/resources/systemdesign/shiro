@@ -1,0 +1,16 @@
+Apache Shiro
+
+1.what is apache shiro?
+Apache Shiro is a powerful and easy-to-use Java security framework that performs authentication, authorization,
+cryptography, and session management and can be used to secure any application.
+Authentication - proving user identity, often called user 'login'.
+Authorization - access control.
+Cryptography - protecting or hiding data from prying eyes.
+Session Management - per-user time-sensitive state
+
+2.Why would you use Apache Shiro today?
+Easy To Use. Comprehensive. Flexible. Web Capable. Pluggable. Supported.
+
+3.Core Concepts: Subject, SecurityManager, and Realms
+Subject - the thing that is currently interacting with software, includes human being, third-party process,
+          daemon account, or anything similar.

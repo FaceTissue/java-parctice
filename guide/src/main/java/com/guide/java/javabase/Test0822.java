@@ -11,6 +11,10 @@ package com.guide.java.javabase;
  * 序号             日期                      修改人                  修改原因
  * 1
  * 2
+ * ------------------------------------------------------------
+ * 总结：
+ * 1.子类可以调用父类构造方法完成对父类私有成员的初始化，却不能访问这些私有成员
+ * 2.子类不显示调用父类构造方法时，默认调用父类的无参构造方法
  ***********************************************************************/
 public class Test0822 {
     public static void main(String[] args) {
@@ -18,6 +22,7 @@ public class Test0822 {
         people.sayHello();
         Human human = new Human("ww", 20, "boy");
         System.out.println(human.toString());
+        System.out.println(new B().toString());
     }
 }
 class People {
@@ -45,5 +50,27 @@ class Human extends People{
     @Override
     public String toString() {
         return super.toString();
+    }
+}
+
+class A {
+    String name;
+    int age;
+    A() {
+        this.name = "zs";
+        this.age = 20;
+    }
+    A(String name) {
+        this.name = name;
+    }
+}
+class B extends A {
+    B() {
+        super("ls");
+    }
+
+    @Override
+    public String toString() {
+        return "B[name: " + name + ", age: " + age + "]";
     }
 }

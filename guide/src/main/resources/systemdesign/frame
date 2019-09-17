@@ -1,1 +1,9 @@
-安全：Apache Shiro和Spring Security
+1.安全：Apache Shiro和Spring Security
+
+2.过滤器、拦截器、监听器的区别
+           Filter                Interceptor                     Listener
+配置位置    web.xml               spring-mvc.xml                   web.xml
+实现原理    函数回调                java反射机制
+作用范围    所有请求                action请求
+
+加载顺序：ServletContext -> context-param -> listener -> filter -> servlet

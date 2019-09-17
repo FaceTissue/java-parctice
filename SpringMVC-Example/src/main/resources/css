@@ -1,0 +1,23 @@
+文档流
+脱离文档流的三种方法：
+1.position:absolute
+2.position:fixed
+3.float: left/right
+
+position:relative对元素位置的影响
+
+负边距的作用：
+1.使普通文档流的位置发生偏移
+与positive:relative对元素位置的影响不同，负边距使普通文档流放弃偏移前占据的位置，而相对定位偏移后仍然占据偏移前的位置
+2.增加元素宽度（前提是该元素没有设置width属性）
+3.对浮动元素位置的影响类似普通文档流
+4.对绝对定位元素的影响（经典的利用绝对定位和负边距实现居中效果）
+
+css动画：
+定义动画效果的关键字 @keyframes
+绑定动画：animation: animation-name, animation-timing-function, animation-iteration-count
+
+box-radius圆角边框
+box-shadow元素增加阴影
+
+linear-gradient(direction, color-begin, color-stop)

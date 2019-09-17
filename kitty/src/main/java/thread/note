@@ -1,0 +1,60 @@
+执行屏障
+CountDownLatch
+CyclicBarrier
+------------------------------------------------------------------------------------------------------------------------
+信号量模型 Semaphore
+------------------------------------------------------------------------------------------------------------------------
+管程模型
+ReentrantLock Condition
+------------------------------------------------------------------------------------------------------------------------
+线程池 ThreadPoolExecutor
+------------------------------------------------------------------------------------------------------------------------
+锁的分类及使用
+1.乐观锁和悲观锁
+乐观锁：数据版本机制和CAS操作
+2.共享锁和独享锁
+独享锁：ReentrantLock
+共享锁：ReadWriteLock 读是共享锁，写是独享锁
+3.互斥锁和读写锁
+互斥：ReentrantLock
+读写锁：ReadWriteLock
+4.可重入锁
+ReentrantLock和synchronized
+5.公平锁和非公平锁
+6.分段锁 Segment
+7.偏向锁/轻量级锁/重量级锁
+8.自旋锁
+------------------------------------------------------------------------------------------------------------------------
+原子变量原理及使用
+原理变量类是乐观锁的一种实现
+原理：volatile关键字和CAS原子操作
+使用：多线程环境下保证数据的可见性和一致性
+CAS操作带来的ABA问题
+
+Unsafe类
+作用：使Java拥有像C语言一样操作内存空间的能力，同时也带来了指针的问题
+实例化：要使用反射机制获取
+Field field = Unsafe.class.getDeclaredField("theUnsafe");
+field.setAccess(true);
+Unsafe unsafe = (Unsafe) field.get(null);
+功能：
+1、操纵对象属性；
+public native long objectFieldOffset(Field f) 方法获取对象属性的内存偏移地址
+putObject(Object object, long offset, Object value) 直接设置对象属性值
+2、操纵数组元素；
+public native int arrayBaseOffset(Class arrayClass) 获取数组第一个元素的偏移地址
+public native int arrayIndexScale(Class arrayClass) 获取数组的增量地址
+putInt(Object array, long offset, int value)
+示例代码：
+int baseOffset = unsafe.arrayBaseOffset(array.getClass());
+int indexScale = unsafe.arrayIndexScale(array.getClass());
+第i个元素的内存地址:
+baseOffset + i * indexScale
+新的元素定位方式:
+int ssfit = 31 - Integer.numberOfLeadingZeros(indexScale);
+(i << ssfit) + baseOffset
+3、线程挂起与恢复、CAS
+unsafe.park() 将线程挂起，使之进入阻塞状态
+unsafe.unpark() 终止一个挂起的线程，使之进入就绪状态
+
+CAS乐观锁机制
