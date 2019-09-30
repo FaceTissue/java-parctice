@@ -1,8 +1,10 @@
-package com.guide.java.javabase;
+package thread;
+
+import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 
 /***************************************************************************
- * @className: ThreadTest
- * @date     : 2019/8/23 9:10
+ * @className: AQSTest
+ * @date     : 2019/9/25 14:21
  * @author   : 张琰培 (zhangyanpei@vvise.com)
  * @module   : [项目]-[一级菜单]-[二级菜单]-[三级菜单]
  * @desc     : [功能简介]
@@ -12,13 +14,7 @@ package com.guide.java.javabase;
  * 1
  * 2
  ***********************************************************************/
-public class ThreadTest {
-    public void function() {
-        final String a = "b";
-        new Thread(() -> System.out.println(a)).start();
-    }
-
+public class AQSTest {
     public static void main(String[] args) {
-        new ThreadTest().function();
     }
 }

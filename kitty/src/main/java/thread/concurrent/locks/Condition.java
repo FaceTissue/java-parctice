@@ -1,8 +1,8 @@
-package com.guide.java.javabase;
+package thread.concurrent.locks;
 
 /***************************************************************************
- * @className: ThreadTest
- * @date     : 2019/8/23 9:10
+ * @className: Condition
+ * @date     : 2019/9/26 14:35
  * @author   : 张琰培 (zhangyanpei@vvise.com)
  * @module   : [项目]-[一级菜单]-[二级菜单]-[三级菜单]
  * @desc     : [功能简介]
@@ -12,13 +12,8 @@ package com.guide.java.javabase;
  * 1
  * 2
  ***********************************************************************/
-public class ThreadTest {
-    public void function() {
-        final String a = "b";
-        new Thread(() -> System.out.println(a)).start();
-    }
+public interface Condition {
+    void await() throws InterruptedException;
 
-    public static void main(String[] args) {
-        new ThreadTest().function();
-    }
+    void signal();
 }

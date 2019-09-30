@@ -65,6 +65,8 @@ public class IsNumber {
         System.out.println(isNumber("-+3")); // false
         System.out.println(isNumber("95a54e53")); // false
         System.out.println(isNumber(".1"));
+        System.out.println(isNumber1("1."));
+        System.out.println(isNumber1(".1"));
     }
 
     // 自动机
@@ -104,5 +106,70 @@ public class IsNumber {
         }
 
         return state == 4 || state == 5 || state == 8 || state == 9;
+    }
+
+    private int make(char c) {
+        switch (c) {
+            case '+':
+            case '-': return 0;
+            case 'e': return 2;
+            case '.': return 3;
+            default:
+                if ('0' <= c && c <= '9') {
+                    return 1;
+                } else {
+                    return -1;
+                }
+        }
+    }
+
+    public boolean isNumber2(String s) {
+        int[][] dfa = {
+                {1, 2, -1, 6},
+                {-1, 2, -1, 6},
+                {-1, 2, 3, 6},
+                {4, 5, -1, -1},
+                {-1, 5, -1, -1},
+                {-1, 5, -1, -1},
+                {-1, 7, 3, -1},
+                {-1, 7, 3, -1}
+        };
+        int finals = 0b11100100;
+        int state = 0, prevState = 0;
+        char[] chars = s.trim().toCharArray();
+        boolean flag = false;
+        for (char c : chars) {
+            int idx = make(c);
+            if (idx < 0) return false;
+            if (idx == 1) flag = true;
+            prevState = state;
+            state = dfa[state][idx];
+            if (state < 0) return false;
+            if (!flag && prevState == 6 && state == 3) return false;
+        }
+        return (finals & (1 << state)) > 0 && flag;
+    }
+
+    @Test
+    public void isNumber2Test() {
+        System.out.println(isNumber2("h"));
+        System.out.println(isNumber2(" "));
+        System.out.println(isNumber2("0")); // true
+        System.out.println(isNumber2(" 0.1")); // true
+        System.out.println(isNumber2("abc")); // false
+        System.out.println(isNumber2("1 a")); // false
+        System.out.println(isNumber2("2e10")); // true
+        System.out.println(isNumber2(" -90e3     ")); // true
+        System.out.println(isNumber2(" 1e")); // false
+        System.out.println(isNumber2("e3")); // false
+        System.out.println(isNumber2(" 6e-1")); // true
+        System.out.println(isNumber2(" 99e2.5 ")); // false
+        System.out.println(isNumber2("53.5e93")); // true
+        System.out.println(isNumber2(" --6 ")); // false
+        System.out.println(isNumber2("-+3")); // false
+        System.out.println(isNumber2("95a54e53")); // false
+        System.out.println(isNumber2(".1"));
+        System.out.println(isNumber2("1."));
+        System.out.println(isNumber2(".1"));
     }
 }

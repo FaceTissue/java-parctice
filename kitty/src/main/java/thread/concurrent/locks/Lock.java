@@ -1,8 +1,10 @@
-package com.guide.java.javabase;
+package thread.concurrent.locks;
+
+import java.util.concurrent.TimeUnit;
 
 /***************************************************************************
- * @className: ThreadTest
- * @date     : 2019/8/23 9:10
+ * @className: Lock
+ * @date     : 2019/9/26 14:30
  * @author   : 张琰培 (zhangyanpei@vvise.com)
  * @module   : [项目]-[一级菜单]-[二级菜单]-[三级菜单]
  * @desc     : [功能简介]
@@ -12,13 +14,16 @@ package com.guide.java.javabase;
  * 1
  * 2
  ***********************************************************************/
-public class ThreadTest {
-    public void function() {
-        final String a = "b";
-        new Thread(() -> System.out.println(a)).start();
-    }
+public interface Lock {
+    void lock();
 
-    public static void main(String[] args) {
-        new ThreadTest().function();
-    }
+    void lockInterruptibly() throws InterruptedException;
+
+    boolean tryLock();
+
+    boolean tryLock(long time, TimeUnit unit) throws InterruptedException;
+
+    void unLock();
+
+    Condition newCondition();
 }

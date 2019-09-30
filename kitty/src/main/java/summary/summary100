@@ -2,7 +2,10 @@
 52.N皇后Ⅱ                            回溯算法                          TotalNQueens
 53.最大子序和                          动态规划、分治                     MaxSubArray
 54.螺旋矩阵                                                             SpiralOrder
-55.跳跃游戏                            递归、记忆化、动态规划、贪心算法    CanJump
+55.跳跃游戏                            递归、记忆化、动态规划、贪心算法       CanJump
+65.有效数字                            有限状态机                        CompilersPrinciples.automata.IsNumber
+71.简化路径                            正则表达式                        regex.SimplifyPath
+72.编辑距离                            动态规划                          algorithm.dynamicProgramming.MinDistance
 ----------------------------------------------------------------------------------------------
 *51.回溯算法待优化
 *52.N皇后Ⅱ经典解法
