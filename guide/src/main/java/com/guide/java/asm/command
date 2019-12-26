@@ -1,0 +1,23 @@
+Metaspace -XX:MetaspaceSize=10M -XX:MaxMetaspaceSize=10M
+
+Heap -Xms10M -Xmx10M
+    Eden (-XX:NewSize=10M -XX:MaxNewSize=10M) == -Xmn10M
+    From Survivor -XX:SurvivorRatio=8
+    To Survivor
+    Old -XX:OldSize=10M -XX:MaxOldSize=10M -XX:NewRatio=8
+
+JVM Stack
+Native Stack
+    -Xss
+
+Direct Memory
+-XX:MaxDirectMemorySize=10M
+
+-XX:PrintGC == -verbose:GC
+-XX:+PrintGCDetails
+-XX:+PrintGCDateStamps
+-XX:+PrintGCTimeStamps
+-XX:+PrintHeapAtGC
+-Xloggc:D:\gc.log
+-XX:+TraceClassLoading
+-XX:+TraceClassUnloading
