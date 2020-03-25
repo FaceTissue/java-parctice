@@ -1,0 +1,67 @@
+Metaspace -XX:MetaspaceSize=10M -XX:MaxMetaspaceSize=10M
+
+Heap -Xms10M -Xmx10M
+    Eden (-XX:NewSize=10M -XX:MaxNewSize=10M) == -Xmn10M
+    From Survivor -XX:SurvivorRatio=8
+    To Survivor
+    Old -XX:OldSize=10M -XX:MaxOldSize=10M -XX:NewRatio=8
+
+JVM Stack
+Native Stack
+    -Xss
+
+Direct Memory
+-XX:MaxDirectMemorySize=10M
+
+-XX:PrintGC == -verbose:GC
+-XX:+PrintGCDetails
+-XX:+PrintGCDateStamps
+-XX:+PrintGCTimeStamps
+-XX:+PrintHeapAtGC
+-Xloggc:D:\gc.log
+-XX:+TraceClassLoading
+-XX:+TraceClassUnloading
+
+------------------------------------------------------------------------------------------------------------------------
+
+JVM:类加载器->运行时数据区->执行引擎
+
+运行时数据区：
+    程序计数器
+    JVM栈 -Xss
+    本地方法栈
+    堆 Young(Eden From To) Old
+        -Xmx -Xms（-Xmx和-Xms通常设置未相同的大小，避免堆扩展）
+        -Xmn10M (-XX:NewSize=10M -XX:MaxNewSize=10M)
+        -XX:NewRatio=4
+        -XX:SurvivorRatio=8
+    方法区（元空间）
+
+GC相关指令：
+打印GC的简要信息：-verbose:gc -XX:+printGC
+打印GC的详细信息：-XX:+PrintGCDetails -XX:+PrintGCTimeStamps
+打印GC程序运行时间：-XX:+PrintGCApplicationConcurrentTime
+打印GC使程序停顿时间：-XX:+PrintGCApplicationStoppedTime
+打印系统内部引用过程：-XX:+PrintReferenceGC
+指定GC log的位置：-Xloggc:log/gc.log
+GC前后打印堆信息：-XX:+PrintHeapAtGC
+监控类的加载：-XX:+TraceClassLoading
+打印实例数量及空间大小：-XX:+PrintClassHistogram
+打印用户主动配置的JVM参数：-XX:+PrintVMOptions
+打印所有JVM参数：-XX:+PrintCommandLineFlags
+打印所有系统参数值：-XX:+PrintFlagsFinal
+
+垃圾收集算法：标记-清除；复制算法；标记-整理; 分代算法（年轻代采用复制算法，老年代采用标记-整理算法）
+垃圾收集器
+Young                Old
+serial(defNew)      serial old
+parnew
+parallel scavange   parallel old
+                    cms(cms作为一个老年代的收集算法，无法与Parallel Scavenge配合工作)
+G1                  G1
+垃圾收集器参数设置：
+UseSerialGC      serial + serial old
+UseParNewGC      parnew + serial old
+UseConcMarkSweepGC parnew + cms + serial old
+UseParallelGC      parallel scavenge + serial old(PS MarkSweep)
+UseParallelOldGC   parallel scavenge + parallel old

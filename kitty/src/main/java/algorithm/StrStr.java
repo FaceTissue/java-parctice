@@ -69,4 +69,11 @@ public class StrStr {
             return -1;
         }
     }
+
+    @Test
+    public void test() {
+        String ps = "ababc";
+        int[] next = getNext(ps);
+        System.out.println(Arrays.toString(next));
+    }
 }
