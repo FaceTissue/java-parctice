@@ -16,7 +16,7 @@ public class DirList {
         };
     }
     public static void main(String[] args) {
-        File path = new File(".");
+        File path = new File("./kitty/src/main/java/io/UserFiles");
         String[] list;
         if (args.length == 0)
             list = path.list();
